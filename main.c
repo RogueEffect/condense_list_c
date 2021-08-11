@@ -80,7 +80,9 @@ void print_list(Node *head) {
     int i = 0;
     Node *current = head;
     while(current) {
-        printf("%d, ", current->data);
+        char sep[3] = ", ";
+        if(!current->next) sep[0] = '\0';
+        printf("%d%s", current->data, sep);
         current = current->next;
         i++;
     }
